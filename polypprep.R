@@ -14,6 +14,7 @@ options(warn=-1)#surpress warnings
 setwd('D:/Google Drive/Manuscripts/POLYP man/')
 load(file = 'data.RData')
 
+#install.packages("dplyr", "jpeg", "raster", "mgcv", "boot", "resample")
 #Required Pagackages
 library(dplyr)
 library(jpeg)
