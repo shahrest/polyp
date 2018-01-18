@@ -11,7 +11,7 @@
 rm(list = ls())#clear ws
 options(warn=-1)#surpress warnings
 #Get Data
-setwd('/polyp/')
+setwd('/polyp/')#Change to local 
 load(file = 'data.RData')
 
 #install.packages("dplyr", "jpeg", "raster", "mgcv", "boot", "resample")
@@ -137,7 +137,7 @@ df_all$res_var<-extract(rasvar, cbind(df_all$lon, df_all$lat))
 df_all$res_sal<-extract(rassal, cbind(df_all$lon, df_all$lat))
 
 ################################################################################
-#########		GLM 		                                
+#########		GLM
 ################################################################################
 #GLM for presence/absence  data
 ##Model Selection - with Cargo counts and Settlement towers
@@ -240,7 +240,8 @@ raspolypv<-raspolyp
 ################################################################################
 breakpoints <- c(0,0.1,0.2,0.3,0.4,0.5,0.6,0.7)
 colors<-c("#3288bd","#99d594","#e6f598",'#ffffbf',"#fee08b","#fc8d59","#d53e4f")
-plot(raspolyp,breaks=breakpoints,col=colors, colNA='darkgray')
+plot(raspolyp,breaks=breakpoints,col=colors, colNA='darkgray',
+main= 'Predicting Probability of Polyps in Chesapeake Bay')
 
 dfc<-filter(df_all, scientist=='cargo')
 dfa<-filter(dfc, polyps==0)
