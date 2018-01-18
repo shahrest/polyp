@@ -11,7 +11,7 @@
 rm(list = ls())#clear ws
 options(warn=-1)#surpress warnings
 #Get Data
-setwd('D:/Google Drive/Manuscripts/POLYP man/')
+setwd('/polyp/')
 load(file = 'data.RData')
 
 #install.packages("dplyr", "jpeg", "raster", "mgcv", "boot", "resample")
@@ -127,7 +127,7 @@ res(rassal)<-res(rasjuly)
 rassal[]<-values(rassalv)
 
 ################################################################################
-######################			 		Extracting values    	##########################
+#######		 		Extracting values    	                                  ##########
 ################################################################################
 #Extracting information from  images, with regard to 52 site locations
 #use_ df all
@@ -137,7 +137,7 @@ df_all$res_var<-extract(rasvar, cbind(df_all$lon, df_all$lat))
 df_all$res_sal<-extract(rassal, cbind(df_all$lon, df_all$lat))
 
 ################################################################################
-######################			 		GLM 					##################################
+######################			GLM 		                                  ##########
 ################################################################################
 #GLM for presence/absence  data
 ##Model Selection - with Cargo counts and Settlement towers
